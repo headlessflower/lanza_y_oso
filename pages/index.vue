@@ -1,7 +1,7 @@
 <script setup></script>
 <template>
   <div>
-    <!--<Hero />-->
+    <Hero />
     <!--<About />-->
     <!-- <ArtSection />-->
     <ArtSale />
