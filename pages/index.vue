@@ -4,6 +4,7 @@
     <Hero />
     <!--<About />-->
     <!-- <ArtSection />-->
+    <ClassesSection />
     <ArtSale />
 
   </div>

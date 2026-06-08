@@ -1,11 +1,82 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import homeArt from '~/data/art-main.js'
+import classOfferings from '~/data/classes.js'
+import { artworks } from '~/utils/artwork.js'
+import { furniturePieces } from '~/utils/furniture.js'
 
+const route = useRoute()
 const name = ref('')
 const email = ref('')
 const selectedArt = ref('')
 const message = ref('')
+const inquiryItems = [
+  ...homeArt.map((item) => ({
+    label: item.title,
+    value: item.title,
+    type: 'Art'
+  })),
+  ...furniturePieces.map((item) => ({
+    label: item.title,
+    value: item.title,
+    type: 'Furniture'
+  })),
+  ...classOfferings.map((item) => ({
+    label: item.title,
+    value: item.title,
+    type: 'Class'
+  }))
+]
+
+watch(
+  () => route.query.art,
+  (art) => {
+    if (typeof art !== 'string') {
+      return
+    }
+
+    const selectedArtwork = artworks.find((item) => item.slug === art || item.title === art)
+
+    if (selectedArtwork) {
+      selectedArt.value = selectedArtwork.title
+    }
+  },
+  { immediate: true }
+)
+
+watch(
+  () => route.query.furniture,
+  (furniture) => {
+    if (typeof furniture !== 'string') {
+      return
+    }
+
+    const selectedPiece = furniturePieces.find((item) => item.slug === furniture || item.title === furniture)
+
+    if (selectedPiece) {
+      selectedArt.value = selectedPiece.title
+      message.value = `I'm interested in ${selectedPiece.title}.`
+    }
+  },
+  { immediate: true }
+)
+
+watch(
+  () => route.query.class,
+  (classSlug) => {
+    if (typeof classSlug !== 'string') {
+      return
+    }
+
+    const selectedClass = classOfferings.find((item) => item.slug === classSlug || item.title === classSlug)
+
+    if (selectedClass) {
+      selectedArt.value = selectedClass.title
+      message.value = `I'm interested in ${selectedClass.title}.`
+    }
+  },
+  { immediate: true }
+)
 
 function submitForm() {
   // TODO: replace with real submission logic
@@ -24,7 +95,7 @@ function submitForm() {
 </script>
 
 <template>
-  <section class="py-16">
+  <section id="contact" class="py-16">
     <div class="max-w-xl mx-auto text-center px-4">
       <!-- Decorator Label -->
       <div class="inline-flex items-center border border-gray-300 rounded-lg px-4 py-2 mb-4 space-x-2">
@@ -56,19 +127,18 @@ function submitForm() {
             required
         />
 
-        <!-- Dropdown list pulled from homeArt data -->
         <select
             v-model="selectedArt"
             class="w-full bg-gray-100 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-300"
             required
         >
-          <option value="" disabled>Select an art piece</option>
+          <option value="" disabled>Select a piece</option>
           <option
-              v-for="(item, index) in homeArt"
+              v-for="(item, index) in inquiryItems"
               :key="index"
-              :value="item.title"
+              :value="item.value"
           >
-            {{ item.title }}
+            {{ item.type }}: {{ item.label }}
           </option>
         </select>
 

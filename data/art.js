@@ -1,10 +1,11 @@
-export const collection = ref([
+export const collection = [
   {
     id: 1,
     title: "Self Help Graphics",
     image: "/art/self_help_graphics.webp",
     link:"/",
     description: "Illustration of Self Help Graphics",
+    tags: ["illustration", "self help graphics", "east los angeles", "printmaking"],
     price: "25",
     size: "11 x 17 "
 
@@ -14,7 +15,8 @@ export const collection = ref([
     title: "Cargando Agua",
     image: "/art/cargando_agua.webp",
     link:"/",
-    description: "Illustration of a man carrying water"
+    description: "Illustration of a man carrying water",
+    tags: ["illustration", "figure", "water", "labor", "east los angeles"]
 
   },
   {
@@ -22,7 +24,8 @@ export const collection = ref([
     title: "El Mercadito",
     image: "/art/el_mercado.webp",
     link:"/",
-    description: "Illustration of El Mercadito in east Los Angeles"
+    description: "Illustration of El Mercadito in east Los Angeles",
+    tags: ["illustration", "el mercadito", "east los angeles", "landmark", "community"]
 
   },
   {
@@ -30,7 +33,8 @@ export const collection = ref([
     title: "El Pino",
     image: "/art/el_pino_.webp",
     link:"/",
-    description: "Illustration of El Pino in east Los Angeles"
+    description: "Illustration of El Pino in east Los Angeles",
+    tags: ["illustration", "el pino", "east los angeles", "landmark", "landscape"]
 
   },
   {
@@ -38,7 +42,8 @@ export const collection = ref([
     title: "Frank Frazetta",
     image: "/art/frazetta.webp",
     link:"/",
-    description: "Illustration of Self Help Graphics"
+    description: "Illustration of Self Help Graphics",
+    tags: ["illustration", "portrait", "frank frazetta", "artist study"]
 
   },
   {
@@ -46,13 +51,14 @@ export const collection = ref([
     title: "Gummo Bunny",
     image: "/art/gummo_.webp",
     link:"/",
-    description: "Illustration of Self Help Graphics"
+    description: "Illustration of Self Help Graphics",
+    tags: ["illustration", "character", "gummo", "bunny", "film"]
 
   },
 
 
 
 
-]) 
+] 
 
 export default collection;

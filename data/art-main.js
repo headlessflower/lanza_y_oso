@@ -1,4 +1,4 @@
-export const homeArt = ref([
+export const homeArt = [
 
 
     {
@@ -240,7 +240,7 @@ export const homeArt = ref([
 
     },
     {
-        id: 17,
+        id: 25,
         title: "La Dama",
         image: "/Ladamados.png",
         link:"/",
@@ -262,7 +262,7 @@ export const homeArt = ref([
 
     },
     {
-        id: 18,
+        id: 26,
         title: "Nude on Black",
         image: "/nude3.png",
         link:"/",
@@ -294,6 +294,6 @@ export const homeArt = ref([
     medium: "Acrylic on board"
 
 },
-	])
+	]
 
 export default homeArt

@@ -1,5 +1,5 @@
 <script setup>
-import { collection } from "./data/art.js";
+import { collection } from '~/data/art.js'
 </script>
 <template>
   <div class="flex flex-col mt-32">
@@ -12,7 +12,7 @@ import { collection } from "./data/art.js";
           <p class="art-title font-bold text-2xl z-4">
             {{ art.title }}
           </p>
-          <NuxtImg :src="art.image" height="600px" preload :alt="art.alt" class=" duration-300">
+          <NuxtImg :src="art.image" height="600px" preload :alt="art.alt || art.title" class=" duration-300">
           </NuxtImg>
         </div>
       </NuxtLink>

@@ -21,8 +21,8 @@ function closeMenu() {
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex space-x-8">
       <NuxtLink to="/art" class="text-gray-700 hover:text-gray-900">Art</NuxtLink>
-      <NuxtLink to="/photography" class="text-gray-700 hover:text-gray-900">Photography</NuxtLink>
       <NuxtLink to="/furniture" class="text-gray-700 hover:text-gray-900">Furniture</NuxtLink>
+      <NuxtLink to="/classes" class="text-gray-700 hover:text-gray-900">Classes</NuxtLink>
       <NuxtLink to="/about" class="text-gray-700 hover:text-gray-900">About</NuxtLink>
     </nav>
 
@@ -49,15 +49,15 @@ function closeMenu() {
             @click="closeMenu"
         >Art</NuxtLink>
         <NuxtLink
-            to="/photography"
-            class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-            @click="closeMenu"
-        >Photography</NuxtLink>
-        <NuxtLink
             to="/furniture"
             class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
             @click="closeMenu"
         >Furniture</NuxtLink>
+        <NuxtLink
+            to="/classes"
+            class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+            @click="closeMenu"
+        >Classes</NuxtLink>
         <NuxtLink
             to="/about"
             class="block px-4 py-2 text-gray-700 hover:bg-gray-100"

@@ -1,4 +1,4 @@
-export const furniture = ref([
+export const furniture = [
   {
     id: 1,
     title: 'Chair - 01',
@@ -17,7 +17,7 @@ export const furniture = ref([
   {
     id: 4,
     title: 'Chair - 02',
-    image: "/furniture/chairwithbackground.png",
+    image: "/furniture/chair-3.png",
     link: "/",
     price: "200"
   },
@@ -84,6 +84,6 @@ export const furniture = ref([
 
 
 
-])
+]
 
 export default furniture
