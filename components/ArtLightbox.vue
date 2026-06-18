@@ -103,11 +103,12 @@ onBeforeUnmount(() => {
         </button>
 
         <figure class="flex max-h-full w-full max-w-7xl flex-col items-center gap-4">
-          <NuxtImg
+          <img
             :src="src"
             :alt="alt"
-            sizes="100vw"
-            class="max-h-[85vh] w-full object-contain"
+            loading="eager"
+            decoding="async"
+            class="max-h-[85vh] max-w-full object-contain"
           />
           <figcaption v-if="title" class="text-center text-sm font-medium text-white">
             {{ title }}
